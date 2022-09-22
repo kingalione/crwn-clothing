@@ -1,7 +1,6 @@
 import React from "react";
 
 import CategoryItem from "../category-item/CategoryItem";
-
 import './CategoryMenu.styles.scss';
 
 const CategoryMenu = ({categories}) => {
