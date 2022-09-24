@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import { Outlet, Link } from "react-router-dom";
-
 import {ReactComponent as CrnwLogo } from '../../assets/crown.svg';
 
 import './NavigationBar.styles.scss';
@@ -15,6 +14,9 @@ const NavigationBar = () => {
         <div className="nav-links-container">
           <Link to="/shop" className="nav-link">
             Shop
+          </Link>
+          <Link to="/sign-in" className="nav-link">
+            Sign In
           </Link>
         </div>
       </div>
