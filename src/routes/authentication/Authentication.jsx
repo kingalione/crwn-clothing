@@ -5,7 +5,7 @@ import SignInForm from "../../components/sign-in-form/SignInForm";
 
 import './Authentication.styles.scss';
 
-const SignIn = () => {
+const Authentication = () => {
   return (
     <div className="authentication-container">
       <SignInForm />
@@ -14,4 +14,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Authentication;
