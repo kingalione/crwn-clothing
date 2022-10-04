@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPW,
 } from "../../utils/firebase/Firebase";
 
-import "./SignInForm.styles.scss";
+import { SignUpContainer, ButtonsContainer } from "./SignInForm.styles";
 
 const defaultFormFields = {
   email: "",
@@ -48,7 +48,7 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
+    <SignUpContainer>
       <h2>I already have an account</h2>
       <span>Sign in with your Email and Password</span>
       <form onSubmit={handleSubmit}>
@@ -70,7 +70,7 @@ const SignInForm = () => {
           value={password}
         />
 
-        <div className="buttons-container">
+        <ButtonsContainer>
           <Button type="submit">Sign In</Button>
           <Button
             type="button"
@@ -79,9 +79,9 @@ const SignInForm = () => {
           >
             Google sign in
           </Button>
-        </div>
+        </ButtonsContainer>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 
