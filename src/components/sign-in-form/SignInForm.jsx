@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import FormInput from "../form-input/FormInput";
-import Button from "../button/Button";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/Button";
 
 import {
   signInWithGooglePopup,
-  signInWithEmailAndPW
+  signInWithEmailAndPW,
 } from "../../utils/firebase/Firebase";
 
 import "./SignInForm.styles.scss";
@@ -72,7 +72,11 @@ const SignInForm = () => {
 
         <div className="buttons-container">
           <Button type="submit">Sign In</Button>
-          <Button type="button" buttonType="google" onClick={logGoogleUser}>
+          <Button
+            type="button"
+            buttonType={BUTTON_TYPE_CLASSES.google}
+            onClick={logGoogleUser}
+          >
             Google sign in
           </Button>
         </div>
