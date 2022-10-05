@@ -1,5 +1,12 @@
-import { compose, configureStore, applyMiddleware } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 
-// root-reducer
+import { rootReducer } from "./RootReducer";
 
+// root-reducer
+const middleWares = [logger];
+
+export const store = configureStore({
+  reducer: rootReducer,
+  middleware: middleWares,
+});
