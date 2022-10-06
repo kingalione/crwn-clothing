@@ -6,34 +6,23 @@ import logger from "redux-logger";
 
 import { rootReducer } from "./RootReducer";
 
-const loggerMiddleware = (store) => (next) => (action) => {
-  if(!action.type) {
-    return next(action);
-  }
-
-  console.log('type', action.type);
-  console.log('payload', action.payload);
-  console.log('currentState: ', store.getState());
-
-  next(action);
-
-  console.log('next state: ', store.getState());
-}
-
 // root-reducer
-const middleWares = [logger];
+const middleWares = [process.env.NODE_ENV !== "production" && logger].filter(
+  Boolean
+);
 
 const persistConfig = {
-  key: 'root',
+  key: "root",
   storage,
-  blacklist: ['user']
-}
+  blacklist: ["user"],
+};
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: middleWares,
+  devTools: true
 });
 
 export const persistor = persistStore(store);
