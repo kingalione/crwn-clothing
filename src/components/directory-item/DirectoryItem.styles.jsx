@@ -65,4 +65,11 @@ export const DirectoryItemContainer = styled.div`
       margin-left: 7.5px;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px 0 10px;
+  }
 `;

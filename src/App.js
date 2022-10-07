@@ -9,6 +9,7 @@ import Authentication from "./routes/authentication/Authentication";
 import Checkout from "./routes/checkout/Checkout";
 
 import { checkUserSession } from "./store/user/UserAction";
+import { GlobalStyle } from "./global.styles";
 
 const App = () => {
   const dispatch = useDispatch();
