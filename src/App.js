@@ -8,25 +8,13 @@ import Home from "./routes/home/Home";
 import Authentication from "./routes/authentication/Authentication";
 import Checkout from "./routes/checkout/Checkout";
 
-import {
-  onAuthStateChangedListener,
-  createUserDocumentFromAuth,
-} from "./utils/firebase/Firebase";
-
-import { setCurrentUser } from "./store/user/UserAction";
+import { checkUserSession } from "./store/user/UserAction";
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user) => {
-      if (user) {
-        createUserDocumentFromAuth(user);
-      }
-      dispatch(setCurrentUser(user));
-    });
-
-    return unsubscribe;
+    dispatch(checkUserSession());
   }, [dispatch]);
 
   return (
