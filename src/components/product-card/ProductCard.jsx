@@ -9,6 +9,8 @@ import {
   Footer,
   Name,
   Price,
+  ProductCardImage,
+  ProductCardButton
 } from "./ProductCard.styles.jsx";
 
 import Button, { BUTTON_TYPE_CLASSES } from "../button/Button";
@@ -24,17 +26,17 @@ const ProductCard = ({ product }) => {
 
   return (
     <ProductCardContainer>
-      <img src={imageUrl} alt={`${name}`} />
+      <ProductCardImage src={imageUrl} alt={`${name}`} />
       <Footer>
         <Name>{name}</Name>
         <Price>{price}$</Price>
       </Footer>
-      <Button
+      <ProductCardButton
         buttonType={BUTTON_TYPE_CLASSES.inverted}
         onClick={addProductToCart}
       >
         Add to cart
-      </Button>
+      </ProductCardButton>
     </ProductCardContainer>
   );
 };

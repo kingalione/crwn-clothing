@@ -1,8 +1,33 @@
 import styled from "styled-components";
+import tw from "twin.macro";
 
+import {
+  InvertedButton
+} from "../button/Button.styles";
 
-export const ProductCardContainer = styled.div`
-  width: 100%;
+export const ProductCardContainer = tw.div`
+  w-full
+  flex
+  flex-col
+  relative
+`;
+
+export const ProductCardImage = tw.img`
+  rounded-md
+  object-cover
+  w-full
+`;
+
+export const ProductCardButton = tw(InvertedButton)`
+  absolute
+  bottom-20
+  place-self-center
+  opacity-80
+  rounded-xl
+`;
+
+/**
+width: 100%;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -30,14 +55,10 @@ export const ProductCardContainer = styled.div`
       display: flex;
     }
   }
-`;
+*/
 
-export const Footer = styled.div`
-  width: 100%;
-  height: 5%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 18px;
+export const Footer = tw.div`
+  text-base
 `;
 
 export const Name = styled.span`

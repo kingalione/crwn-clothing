@@ -1,20 +1,19 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import tw from "twin.macro";
 
-export const CategoryPreviewContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
+export const CategoryPreviewContainer = tw.div`
+  flex
+  flex-col
+  py-5
 `;
 
-export const TitleContainer = styled(Link)`
-  font-size: 28px;
-  margin-bottom: 25px;
-  cursor: pointer;
+export const TitleContainer = tw(Link)`
+  text-3xl
 `;
 
-export const PreviewContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: 20px;
+export const PreviewContainer = tw.div`
+  grid
+  gap-2
+  lg:grid-cols-4
 `;

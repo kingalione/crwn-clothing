@@ -10,7 +10,7 @@ import App from "./App";
 import { store, persistor } from "./store/Store";
 import { stripePromise } from "./utils/stripe/StripeUtils";
 
-import "./index.scss";
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
