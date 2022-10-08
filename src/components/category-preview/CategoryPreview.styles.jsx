@@ -14,6 +14,6 @@ export const TitleContainer = tw(Link)`
 
 export const PreviewContainer = tw.div`
   grid
-  gap-2
+  gap-4
   lg:grid-cols-4
 `;
